@@ -18,5 +18,6 @@ Not only ORMs, but there are also multiple Python Connectors for databases avail
 
 For more info: https://www.fullstackpython.com/object-relational-mappers-orms.html
 
+
 A **Model** as stated in the definition is the link between the server and your database. Now, whenever you need the data or any operation is performed where data from the server is needed which is essentially just retrieving data from your database, it will need some middleware or bridge which can convert that data in a transmittable/Http response or more generally a web-transmittable format. 
 Therefore, Model comes in and does this important work for you. Model not only retrieves the data and converts it into the desirable format but execute it by applying business logic, or the logical part/ backend of your website that is actually inside the model component.
