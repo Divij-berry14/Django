@@ -8,5 +8,5 @@ class Student(models.Model):
     department = models.TextField()
 
     def __str__(self):
-        return self.roll_number
+        return self.name
 
