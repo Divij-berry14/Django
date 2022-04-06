@@ -68,3 +68,14 @@ Comments are the best practices that increase code reusability, and readability.
 The general syntax is:
 
 `{# this will not be rendered by the browser #}`
+
+
+**_We completed 3 main fundamentals of web development and Django._**
+
+_**As we learned that,**_
+
+_**1. Models are for the data transmission between the database and view, they contain data definition of our website.**_
+
+**_2. View are the connectors between the models and templates while also passing the required server data. They contain the business logic._**
+
+_**3. Templates play an important role in Django and are presently the best implementation of loosely coupled architectures.**_
