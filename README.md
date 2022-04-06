@@ -28,4 +28,43 @@ The main purpose of Django templates is to separate the data representation with
 Django templating is done via templating engines, there are multiple templating engines(Jinja templating) although the one which Django ships in is Django template as you can see in your projects’ settings.py file.
 ![img_3.png](img_3.png)
 
-The Django templates language has their own syntax and rules, although they are not hard to grasp and we will cover them in the next section of this tutorial, first let’s create our own template.
+Django templates use special language or syntax to implement it because essentially Django template is nothing but python string, which marks-up by Django Template Engine.
+
+There are 4 types of syntax in Django Template language:
+
+**i. Tags/ {% control statements %}**
+
+Whenever we use {% %}, inside a Django Template, we are writing some logic code that will implement on the data we just passed with the render.
+These are called tags in Django Templates.
+
+In the first template,
+`{% for stud in student %}`
+We started a for loop which will run until the end of our database records. Then it will repeat the statements above the `{% endfor %}`. The statements between them can be any segment, either Python or browser renderable (HTML, CSS, JavaScript), etc.
+
+
+**ii. Printing Value/ {{ variables }}**
+
+Whenever we want to print output of Python code in a Django template directly from the server, we use:
+
+`{{variable/ model to print}}`
+
+We will use these statements in most of your browser-renderable code, as this piece here will exchange with the actual value of the variable stored in it by the server.
+
+
+**iii. Filters / {{ metadata | response }}**
+
+Since Django is a web framework, it will also serve content on the basis of metadata, where we use the filters.
+
+`{{ metadata| response or render }}`
+
+We need these filters mostly when working on a very big project, where the metadata for the site matters, otherwise it is not that important for smaller blog websites.
+Although, by using it for metadata, Django also provides us to dynamically generate our metadata.
+
+
+**iv. Comments/ {# Comments #}**
+
+Comments are the best practices that increase code reusability, and readability. Therefore, Django framework provides you with this special tag to comment in the template language.
+
+The general syntax is:
+
+`{# this will not be rendered by the browser #}`
