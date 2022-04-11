@@ -15,8 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from .views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('student/', include('student.urls')),
+    path('redirect/', data_flair),
+    path('dataflair/', index),
+    path('djangotutor/', Tutorial.as_view()),
 ]

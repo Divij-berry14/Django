@@ -39,7 +39,7 @@ These are called tags in Django Templates.
 
 In the first template,
 `{% for stud in student %}`
-We started a for loop which will run until the end of our database records. Then it will repeat the statements above the `{% endfor %}`. The statements between them can be any segment, either Python or browser renderable (HTML, CSS, JavaScript), etc.
+We started a for loop which will run until the end of our database records. Then it will repeat the statements above the `{% endfor %}`. The statements between them can be any segment, either Python or browser readable (HTML, CSS, JavaScript), etc.
 
 
 **ii. Printing Value/ {{ variables }}**
@@ -63,7 +63,7 @@ Although, by using it for metadata, Django also provides us to dynamically gener
 
 **iv. Comments/ {# Comments #}**
 
-Comments are the best practices that increase code reusability, and readability. Therefore, Django framework provides you with this special tag to comment in the template language.
+Comments are the best practices that increase code usability, and readability. Therefore, Django framework provides you with this special tag to comment in the template language.
 
 The general syntax is:
 
@@ -79,3 +79,24 @@ _**1. Models are for the data transmission between the database and view, they c
 **_2. View are the connectors between the models and templates while also passing the required server data. They contain the business logic._**
 
 _**3. Templates play an important role in Django and are presently the best implementation of loosely coupled architectures.**_
+
+![img_4.png](img_4.png)
+
+**1. manage.py**
+This file is the command line utility of the project, and we will be using this file only to deploy, debug and test with the project.
+
+The file contains the code for starting the server, migrating and controlling the project through command-line.
+This file provides all the functionality as with the django-admin, and, it also provides some project specific functionalities. During this tutorial, we will frequently use some commands that are runserver, makemigrations, migrate etc. We will be using these commands more frequently than others.
+
+**_runserver_** is a command to start the test server provided by Django framework and that is also one of the advantages of Django over other frameworks.
+
+**_makemigrations_** is the command for integrating your project with files or apps you have added in it. This command will actually check for any new additions in your project and then add that to the same.
+
+_**migrate**_, the last command is to actually add those migrations you made in the last command with the whole project. You can get the idea as the former command is used for saving the changes in the file and later one to actually apply that change to the whole project then the single file.
+
+**_ i __init__.py_**
+The __init__.py file is empty, and it exists in the project for the sole purpose of telling the python interpreter that this directory is a package. That’s one of the standard rules of python packages.
+
+**_ii. settings.py_**
+The settings.py is the main file where we will be adding all our applications and middleware applications. As the name suggests this is the main settings file of the Django project. This file contains the installed applications and middleware information which are installed on this Django project.
+Every time you install a new app or custom application you will be adding that in this file.
