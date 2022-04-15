@@ -100,3 +100,5 @@ The __init__.py file is empty, and it exists in the project for the sole purpose
 **_ii. settings.py_**
 The settings.py is the main file where we will be adding all our applications and middleware applications. As the name suggests this is the main settings file of the Django project. This file contains the installed applications and middleware information which are installed on this Django project.
 Every time you install a new app or custom application you will be adding that in this file.
+
+![img_6.png](img_6.png)
