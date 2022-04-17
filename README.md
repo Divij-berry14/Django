@@ -102,3 +102,35 @@ The settings.py is the main file where we will be adding all our applications an
 Every time you install a new app or custom application you will be adding that in this file.
 
 ![img_6.png](img_6.png)
+
+**_Redirect_**
+
+`$ curl --include http://127.0.0.1:8000/hello/
+HTTP/1.1 200 OK
+Date: Sun, 01 Jul 2018 20:32:55 GMT
+Server: WSGIServer/0.2 CPython/3.6.3
+Content-Type: text/html; charset=utf-8
+X-Frame-Options: SAMEORIGIN
+Content-Length: 11
+
+Hello World`
+
+As you can see, an HTTP response starts with a status line that contains a status code and a status message. The status line is followed by an arbitrary number of HTTP headers. An empty line indicates the end of the headers and the start of the response body, which contains the actual data the server wants to send.
+
+**_HTTP Redirects Status Codes_**
+
+What does a redirect response look like? Let’s assume the path /redirect/ is handled by redirect_view(), shown earlier. If you access http://127.0.0.1:8000/redirect/ with curl, your console looks like this:
+
+`$ curl --include http://127.0.0.1:8000/redirect/
+HTTP/1.1 302 Found
+Date: Sun, 01 Jul 2018 20:35:34 GMT
+Server: WSGIServer/0.2 CPython/3.6.3
+Content-Type: text/html; charset=utf-8
+Location: /redirect-success/
+X-Frame-Options: SAMEORIGIN
+Content-Length: 0
+`The two responses might look similar, but there are some key differences. The redirect:
+
+Returns a different status code (302 versus 200)
+Contains a Location header with a relative URL
+Ends with an empty line because the body of the redirect response is empty
