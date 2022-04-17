@@ -103,7 +103,7 @@ Every time you install a new app or custom application you will be adding that i
 
 ![img_6.png](img_6.png)
 
-**_Redirect_**
+**Redirect**
 
 `$ curl --include http://127.0.0.1:8000/hello/
 HTTP/1.1 200 OK
@@ -112,9 +112,8 @@ Server: WSGIServer/0.2 CPython/3.6.3
 Content-Type: text/html; charset=utf-8
 X-Frame-Options: SAMEORIGIN
 Content-Length: 11
-
-Hello World`
-
+Hello World
+`
 As you can see, an HTTP response starts with a status line that contains a status code and a status message. The status line is followed by an arbitrary number of HTTP headers. An empty line indicates the end of the headers and the start of the response body, which contains the actual data the server wants to send.
 
 **_HTTP Redirects Status Codes_**
@@ -134,3 +133,8 @@ Content-Length: 0
 Returns a different status code (302 versus 200)
 Contains a Location header with a relative URL
 Ends with an empty line because the body of the redirect response is empty
+
+In other words, whenever the server sends a status code of 302, it says to the client, “Hey, at the moment, the thing you are looking for can be found at this other location.”
+A key phrase in the specification is “MAY use the Location field value for automatic redirection.” It means that you can’t force the client to load another URL. The client can choose to wait for user confirmation or decide not to load the URL at all. 
+Now you know that a redirect is just an HTTP response with a 3xx status code and a Location header. The key takeaway here is that an HTTP redirect is like any old HTTP response, but with an empty body, 3xx status code, and a Location header.
+That’s it. We’ll tie this back into Django momentarily, but first let’s take a look at two types of redirects in that 3xx status code range and see why they matter when it comes to web development.
