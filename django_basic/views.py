@@ -8,6 +8,7 @@ def index(request):
 
 
 def data_flair(request):
+    # return HttpResponseRedirect(reverse('index'))
     # return HttpResponseRedirect("/dataflair")
     return redirect('/dataflair')
 

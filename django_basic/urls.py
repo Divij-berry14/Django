@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('student/', include('student.urls')),
     path('redirect/', data_flair),
-    path('dataflair/', index),
+    path('dataflair/', index, name="index"),
     path('djangotutor/', Tutorial.as_view()),
 ]
