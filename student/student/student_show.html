@@ -12,6 +12,7 @@
             <h2>Name {{ stud.name }}</h2>
             <p> department {{ stud.department}}</p>
             <p> class {{ stud.standard}}</p>
+            <a href="{{stud.get_absolute_url}}" >Link</a>
         </li>
         {% endfor %}
     </ul>
