@@ -129,6 +129,8 @@ Content-Type: text/html; charset=utf-8
 Location: /redirect-success/
 X-Frame-Options: SAMEORIGIN
 Content-Length: 0
+
+
 `The two responses might look similar, but there are some key differences. The redirect:
 
 Returns a different status code (302 versus 200)
