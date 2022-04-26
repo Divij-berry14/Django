@@ -22,7 +22,8 @@ For more info: https://www.fullstackpython.com/object-relational-mappers-orms.ht
 A **Model** as stated in the definition is the link between the server and your database. Now, whenever you need the data or any operation is performed where data from the server is needed which is essentially just retrieving data from your database, it will need some middleware or bridge which can convert that data in a transmittable/Http response or more generally a web-transmittable format. 
 Therefore, Model comes in and does this important work for you. Model not only retrieves the data and converts it into the desirable format but execute it by applying business logic, or the logical part/ backend of your website that is actually inside the model component.
 
-**What are Django Templates?**
+# **What are Django Templates?**
+
 Django templates are a combination of static HTML layout and Django Syntax which is essentially Python code. Both of these components help in generating HTML pages dynamically and make your website more user-engaging.
 The main purpose of Django templates is to separate the data representation with the data itself. That means, the browser part is only to render the HTML sent to it by the server, and all the relevant data is given to the template by Django itself. This makes the process much easier and pages render easily as there is less clutter in both the front-end and back-end.
 Django templating is done via templating engines, there are multiple templating engines(Jinja templating) although the one which Django ships in is Django template as you can see in your projects’ settings.py file.
@@ -32,7 +33,7 @@ Django templates use special language or syntax to implement it because essentia
 
 There are 4 types of syntax in Django Template language:
 
-**i. Tags/ {% control statements %}**
+## **i. Tags/ {% control statements %}**
 
 Whenever we use {% %}, inside a Django Template, we are writing some logic code that will implement on the data we just passed with the render.
 These are called tags in Django Templates.
@@ -42,7 +43,7 @@ In the first template,
 We started a for loop which will run until the end of our database records. Then it will repeat the statements above the `{% endfor %}`. The statements between them can be any segment, either Python or browser readable (HTML, CSS, JavaScript), etc.
 
 
-**ii. Printing Value/ {{ variables }}**
+## **ii. Printing Value/ {{ variables }}**
 
 Whenever we want to print output of Python code in a Django template directly from the server, we use:
 
@@ -51,7 +52,7 @@ Whenever we want to print output of Python code in a Django template directly fr
 We will use these statements in most of your browser-renderable code, as this piece here will exchange with the actual value of the variable stored in it by the server.
 
 
-**iii. Filters / {{ metadata | response }}**
+## **iii. Filters / {{ metadata | response }}**
 
 Since Django is a web framework, it will also serve content on the basis of metadata, where we use the filters.
 
@@ -61,7 +62,7 @@ We need these filters mostly when working on a very big project, where the metad
 Although, by using it for metadata, Django also provides us to dynamically generate our metadata.
 
 
-**iv. Comments/ {# Comments #}**
+## **iv. Comments/ {# Comments #}**
 
 Comments are the best practices that increase code usability, and readability. Therefore, Django framework provides you with this special tag to comment in the template language.
 
@@ -82,7 +83,8 @@ _**3. Templates play an important role in Django and are presently the best impl
 
 ![img_4.png](img_4.png)
 
-**1. manage.py**
+### **1. manage.py**
+
 This file is the command line utility of the project, and we will be using this file only to deploy, debug and test with the project.
 
 The file contains the code for starting the server, migrating and controlling the project through command-line.
@@ -104,7 +106,7 @@ Every time you install a new app or custom application you will be adding that i
 
 ![img_6.png](img_6.png)
 
-**Redirect**
+# **Redirect**
 
 `$ curl --include http://127.0.0.1:8000/hello/
 HTTP/1.1 200 OK
@@ -144,3 +146,9 @@ A key phrase in the specification is “MAY use the Location field value for aut
 Now you know that a redirect is just an HTTP response with a 3xx status code and a Location header. The key takeaway here is that an HTTP redirect is like any old HTTP response, but with an empty body, 3xx status code, and a Location header.
 
 That’s it. We’ll tie this back into Django momentarily, but first let’s take a look at two types of redirects in that 3xx status code range and see why they matter when it comes to web development.
+
+# **What is Caching?**
+
+Caching is the process of storing recently generated results in memory. Those results can then be used in future when requested again.
+
+The computer memory works in a similar manner. CPU stores some files in the cache Memory. And, when CPU needs them again it looks for those files in Cache Memory first. Since Cache Memory is fast, the processing time improves. We will be implementing something similar on our server.
