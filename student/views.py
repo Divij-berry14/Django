@@ -52,8 +52,48 @@ def show_cookie(request):
 
 def delete_cookie(request):
     if request.COOKIES.get("visits"):
-        response = HttpResponse("<h1>dataflair<br>Cookie deleted</h1>")
+        response = HttpResponse("<h1>data flair<br>Cookie deleted</h1>")
         response.delete_cookie("visits")
     else:
-        response = HttpResponse("<h1>dataflair</h1>need to create cookie before deleting")
+        response = HttpResponse("<h1>data flair</h1>need to create cookie before deleting")
     return response
+
+
+def cookie_session(request):
+    request.session.set_test_cookie()
+    return HttpResponse("<h1>data flair</h1>")
+
+
+def cookie_delete(request):
+    if request.session.test_cookie_worked():
+        request.session.delete_test_cookie()
+        response = HttpResponse("data flair<br> cookie created")
+    else:
+        response = HttpResponse("Data flair <br> Your browser does not accept cookies")
+    return response
+
+
+def create_session(request):
+    request.session['name'] = 'username'
+    request.session['password'] = 'password123'
+    return HttpResponse("<h1>data flair<br> the session is set</h1>")
+
+
+def access_session(request):
+    response = "<h1>Welcome to Sessions of data flair</h1><br>"
+    if request.session.get('name'):
+        response += "Name : {0} <br>".format(request.session.get('name'))
+    if request.session.get('password'):
+        response += "Password : {0} <br>".format(request.session.get('password'))
+        return HttpResponse(response)
+    else:
+        return redirect('/student/create/')
+
+
+def delete_session(request):
+    try:
+        del request.session['name']
+        del request.session['password']
+    except KeyError:
+        pass
+    return HttpResponse("<h1>data flair<br>Session Data cleared</h1>")
