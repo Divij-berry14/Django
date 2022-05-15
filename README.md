@@ -152,3 +152,9 @@ That’s it. We’ll tie this back into Django momentarily, but first let’s ta
 Caching is the process of storing recently generated results in memory. Those results can then be used in future when requested again.
 
 The computer memory works in a similar manner. CPU stores some files in the cache Memory. And, when CPU needs them again it looks for those files in Cache Memory first. Since Cache Memory is fast, the processing time improves. We will be implementing something similar on our server.
+
+# **Django Form Class**
+Forms are implemented via Django form class. Some built-in tasks which Django provides you are:
+
+Rendering Form
+Form Validation
