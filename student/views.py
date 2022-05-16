@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic.base import RedirectView
 from django.urls import reverse
+from . import forms
 
 
 def index(request):
@@ -97,3 +98,15 @@ def delete_session(request):
     except KeyError:
         pass
     return HttpResponse("<h1>data flair<br>Session Data cleared</h1>")
+
+
+def registration_form(request):
+    form = forms.SignUp()
+    if request.method == 'POST':
+        form = forms.SignUp(request.POST)
+        html = 'we have received this form again'
+        if form.is_valid():
+            html = html + "The Form is Valid"
+    else:
+        html = 'welcome for first time'
+    return render(request, 'sign_up.html', {'html': html, 'form': form})
