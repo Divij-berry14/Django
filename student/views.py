@@ -104,7 +104,7 @@ def registration_form(request):
     form = forms.SignUp()
     if request.method == 'POST':
         form = forms.SignUp(request.POST)
-        html = 'we have received this form again'
+        html = 'we have received this form again!'
         if form.is_valid():
             html = html + "The Form is Valid"
     else:
