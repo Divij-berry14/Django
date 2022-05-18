@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic.base import RedirectView
 from django.urls import reverse
 from . import forms
+import datetime
 
 
 def index(request):
@@ -119,3 +120,8 @@ def home(request):
 def other(request):
     context = {'k1': 'Welcome to the Second page'}
     return render(request, 'others.html', context)
+
+
+def about(request):
+    time = datetime.datetime.now()
+    return render(request, 'about.html', {'time': time})
