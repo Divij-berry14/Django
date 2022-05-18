@@ -104,9 +104,18 @@ def registration_form(request):
     form = forms.SignUp()
     if request.method == 'POST':
         form = forms.SignUp(request.POST)
-        html = 'we have received this form again!'
+        html = 'We have received this form again!'
         if form.is_valid():
             html = html + "The Form is Valid"
     else:
         html = 'welcome for first time'
     return render(request, 'sign_up.html', {'html': html, 'form': form})
+
+
+def home(request):
+    return render(request, 'base.html')
+
+
+def other(request):
+    context = {'k1': 'Welcome to the Second page'}
+    return render(request, 'others.html', context)

@@ -16,5 +16,7 @@ urlpatterns = [
     path('create/', views.create_session),
     path('access/', views.access_session),
     path('delete/', views.delete_session),
-    path('form/', views.registration_form, name='registration_form')
+    path('form/', views.registration_form, name='registration_form'),
+    path('base/', views.home, name="homepage"),
+    path('other/', views.other, name="other_page")
 ]
