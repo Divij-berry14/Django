@@ -20,4 +20,5 @@ from .views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('student/', include('student.urls')),
+    path('upload/', include('Profile_Maker.urls'))
 ]
