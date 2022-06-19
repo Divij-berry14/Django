@@ -14,7 +14,7 @@ def create_profile(request):
             file_type = user_pr.display_picture.url.split(".")[-1]
             file_type = file_type.lower()
             if file_type not in IMAGE_FILE_TYPES:
-                return render(request, 'profile_maker/error.html')
+                return render(request, 'profile_maker/errors.html')
             user_pr.save()
             return render(request, 'profile_maker/details.html', {'user_pr': user_pr})
     context = {"form": form}
